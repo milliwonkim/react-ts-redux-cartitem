@@ -6,7 +6,7 @@ import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducer';
 
-import './App.css';
+import './App.scss';
 
 declare global {
     interface Window {
