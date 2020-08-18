@@ -9,18 +9,29 @@ import {
 import cartItems from './cart-items';
 import { ICartState } from './components/CartContainer';
 
+export type CartProps1 = {
+    id: number;
+    amount: number;
+};
+
+export type CartProps2 = {
+    id: number;
+    toggle: string;
+};
+
 export type CartState = {
     cart: ICartState[];
     total: number;
     amount: number;
 };
+
 export type CartAction =
     | { type: 'CLEAR_CART' }
-    | { type: 'DECREASE'; payload: any }
-    | { type: 'INCREASE'; payload: any }
-    | { type: 'REMOVE'; payload: any }
+    | { type: 'DECREASE'; payload: CartProps1 }
+    | { type: 'INCREASE'; payload: CartProps1 }
+    | { type: 'REMOVE'; payload: CartProps1 }
     | { type: 'GET_TOTALS' }
-    | { type: 'TOGGLE_AMOUNT'; payload: any };
+    | { type: 'TOGGLE_AMOUNT'; payload: CartProps2 };
 
 const initialStore: CartState = {
     cart: cartItems,
